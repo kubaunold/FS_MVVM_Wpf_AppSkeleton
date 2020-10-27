@@ -1,12 +1,18 @@
-﻿module ViewModelBase
+﻿namespace ViewModel
 
 open System.ComponentModel
+open Microsoft.FSharp.Quotations.Patterns
 
-//WPF-friendly ViewModelBase
-type ViewModelBase() =
-    let propertyChanged = Event<PropertyChangedEventHandler,PropertyChangedEventArgs>()
-    member this.Notify propertyName = propertyChanged.Trigger(this,PropertyChangedEventArgs(propertyName))
-    interface INotifyPropertyChanged with
-        [<CLIEvent>]
-        member x.PropertyChanged = propertyChanged.Publish
-        
+type ViewModelBase () =
+   let propertyChanged = 
+       Event<PropertyChangedEventHandler,PropertyChangedEventArgs>()
+   let getPropertyName = function
+       | PropertyGet(_,pi,_) -> pi.Name
+       | _ -> invalidOp "Expecting property getter expression"
+   interface INotifyPropertyChanged with
+       [<CLIEvent>]
+       member this.PropertyChanged = propertyChanged.Publish
+   member private this.NotifyPropertyChanged propertyName = 
+       propertyChanged.Trigger(this,PropertyChangedEventArgs(propertyName))
+   member this.NotifyPropertyChanged quotation = 
+       quotation |> getPropertyName |> this.NotifyPropertyChanged

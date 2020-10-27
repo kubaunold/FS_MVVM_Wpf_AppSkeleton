@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,7 +23,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new ViewModel2.ViewModel();
+            DataContext = new ViewModel.ViewModel();
         }
     }
 }

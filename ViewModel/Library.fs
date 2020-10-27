@@ -1,4 +1,4 @@
-﻿namespace ViewModel2
+﻿namespace ViewModel
 
 module Say =
     let hello name =

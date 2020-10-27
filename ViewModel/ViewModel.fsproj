@@ -6,7 +6,8 @@
 
   <ItemGroup>
     <Compile Include="ViewModelBase.fs" />
-    <Compile Include="MainViewModel.fs" />
+    <Compile Include="ViewModel.fs" />
+    <Compile Include="Library.fs" />
   </ItemGroup>
 
 </Project>

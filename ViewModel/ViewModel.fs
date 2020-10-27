@@ -1,4 +1,4 @@
-﻿namespace ViewModel2
+﻿namespace ViewModel
 
 type ViewModel() =
     inherit ViewModelBase()
