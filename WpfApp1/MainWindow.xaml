@@ -15,7 +15,7 @@
     xmlns:model="clr-namespace:ViewModel;assembly=ViewModel"
     xmlns:local="clr-namespace:WpfApp1"
     mc:Ignorable="d"
-    Title="MainWindow" Height="450" Width="800">
+    Title="MARS App - Market And Risk Simulation Application" Height="450" Width="800">
 
     <!--<Grid>
         <materialDesign:Card Padding="32" Margin="16">
@@ -73,9 +73,10 @@
                             <ColumnDefinition Width="160"/>
                             <ColumnDefinition Width="160"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Row="1" Grid.Column="1" Width="100" Margin="4" Style="{DynamicResource MaterialDesignBody2TextBlock}" Text="Currency"/>
-                        <TextBlock Grid.Row="1" Grid.Column="2" Width="100" Margin="4" Style="{DynamicResource MaterialDesignBody2TextBlock}" Text="Value"/>
-                        <TextBlock Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{DynamicResource MaterialDesignBody2TextBlock}" Text="{Binding Summary}"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="4" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" Text="Available funds:"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" Width="100" Margin="4" Style="{DynamicResource MaterialDesignBody2TextBlock}" Text="Value"/>
+                        <TextBlock Grid.Row="2" Grid.Column="2" Width="100" Margin="4" Style="{DynamicResource MaterialDesignBody2TextBlock}" Text="Currency"/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Style="{DynamicResource MaterialDesignBody2TextBlock}" Text="{Binding Summary}"/>
                         
                         <!--<ItemsControl Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Summary}" >
                             <ItemsControl.ItemTemplate>
