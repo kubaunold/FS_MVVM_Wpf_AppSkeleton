@@ -8,6 +8,9 @@ type ViewModel() =
 
     let summary = 10
     
+    let pieChart = 7
+
+
     //do
     //    summary.Add(7)
     
@@ -29,6 +32,11 @@ type ViewModel() =
     member this.GetFullName() = 
         sprintf "%s %s" (this.FirstName) (this.LastName)
 
-    
+
+
+    (* Portolio's summary *)
     member this.Summary = summary
+
+    (* Charting *)
+    member this.PieChart = pieChart
 
