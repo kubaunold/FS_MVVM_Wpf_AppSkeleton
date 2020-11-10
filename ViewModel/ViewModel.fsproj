@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="SimpleCommand.fs" />
     <Compile Include="ViewModelBase.fs" />
+    <Compile Include="ConfigurationViewModel.fs" />
     <Compile Include="ViewModel.fs" />
     <Compile Include="Library.fs" />
   </ItemGroup>

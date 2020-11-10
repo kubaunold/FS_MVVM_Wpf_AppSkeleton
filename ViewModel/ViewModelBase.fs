@@ -4,8 +4,7 @@ open System.ComponentModel
 open Microsoft.FSharp.Quotations.Patterns
 
 type ViewModelBase () =
-   let propertyChanged = 
-       Event<PropertyChangedEventHandler,PropertyChangedEventArgs>()
+   let propertyChanged = Event<PropertyChangedEventHandler,PropertyChangedEventArgs>()
    let getPropertyName = function
        | PropertyGet(_,pi,_) -> pi.Name
        | _ -> invalidOp "Expecting property getter expression"
@@ -16,3 +15,6 @@ type ViewModelBase () =
        propertyChanged.Trigger(this,PropertyChangedEventArgs(propertyName))
    member this.NotifyPropertyChanged quotation = 
        quotation |> getPropertyName |> this.NotifyPropertyChanged
+   
+   // used for notifying that a property has changed
+   member this.Notify propertyName = propertyChanged.Trigger(this,PropertyChangedEventArgs(propertyName))
